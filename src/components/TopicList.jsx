@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const TopicList = ({
   topics,
@@ -9,7 +10,7 @@ const TopicList = ({
   onSelectTopic,
   depth = 0,
   findParentId,
-  topicsData, // Accept topicsData as a prop
+  topicsData,
 }) => {
   const [expandedTopics, setExpandedTopics] = useState({});
 
@@ -24,185 +25,66 @@ const TopicList = ({
     <div>
       {topics &&
         topics.map((topic) => (
-          <div key={topic.id} className="mb-2">
+          <div key={topic.id} className="mb-1">
             <div
-              className="flex items-center justify-between bg-blue-50 p-2 rounded-md cursor-pointer hover:bg-blue-100"
-              style={{ paddingLeft: `${depth * 1.5}rem` }}
+              className="flex items-center justify-between rounded-md cursor-pointer hover:bg-gray-100 transition-colors duration-200"
+              style={{ paddingLeft: `${depth * 1.5}rem`, padding: "0.75rem" }}
               onClick={() =>
                 topic.children ? toggleTopic(topic.id) : onSelectTopic(topic.id)
               }
             >
               <h4
-                className={`font-semibold text-lg ${
-                  !findParentId(topicsData, topic.id) ||
-                  completedTopics.includes(findParentId(topicsData, topic.id))
-                    ? "text-gray-800"
-                    : "text-gray-500"
+                className={`font-semibold text-sm sm:text-base ${
+                  topic.isUnlocked ? "text-gray-800" : "text-gray-500"
                 }`}
               >
                 {topic.title}
               </h4>
-              {topic.children && (
-                <span className="text-gray-600 font-semibold">
-                  {expandedTopics[topic.id] ? "-" : "+"}
-                </span>
-              )}
-              {!topic.children && (
-                <div className="flex items-center">
-                  {!(
-                    !findParentId(topicsData, topic.id) ||
-                    completedTopics.includes(findParentId(topicsData, topic.id))
-                  ) && (
-                    <span className="ml-2 text-sm text-gray-600">(Locked)</span>
-                  )}
-                  {(!findParentId(topicsData, topic.id) ||
-                    completedTopics.includes(
-                      findParentId(topicsData, topic.id)
-                    )) &&
-                    !completedTopics.includes(topic.id) && (
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation();
+              <div className="flex items-center">
+                {topic.children && (
+                  <span className="text-gray-600 font-semibold text-sm">
+                    {expandedTopics[topic.id] ? "-" : "+"}
+                  </span>
+                )}
+                {!topic.children && (
+                  <>
+                    <Checkbox
+                      id={`topic-${topic.id}`}
+                      checked={completedTopics.includes(topic.id)}
+                      onCheckedChange={(checked) => {
+                        if (checked) {
                           onCompleteTopic(topic.id);
-                        }}
-                        className="px-2 py-1 bg-green-500 text-white rounded-md text-sm hover:bg-green-600 transition-colors duration-200 ml-2"
-                      >
-                        Complete
-                      </button>
-                    )}
-                  {completedTopics.includes(topic.id) && (
-                    <span className="ml-2 text-sm text-green-600">
-                      (Completed)
-                    </span>
-                  )}
-                </div>
-              )}
+                        } else {
+                          // Implement logic to un-complete if needed
+                        }
+                      }}
+                      disabled={!topic.isUnlocked}
+                      className="mr-2"
+                    />
+                    <label
+                      htmlFor={`topic-${topic.id}`}
+                      className={`text-sm text-gray-600 cursor-pointer ${
+                        topic.isUnlocked ? "" : "opacity-50"
+                      }`}
+                    >
+                      Complete
+                    </label>
+                  </>
+                )}
+              </div>
             </div>
             {topic.children && expandedTopics[topic.id] && (
               <div className="ml-4">
-                {/* Render the children directly here */}
-                {topic.children.map((child) => (
-                  <div
-                    key={child.id}
-                    className="flex items-center justify-between bg-blue-50 p-2 rounded-md cursor-pointer hover:bg-blue-100 mb-2"
-                    style={{ paddingLeft: `${(depth + 1) * 1.5}rem` }}
-                    onClick={() =>
-                      child.children
-                        ? toggleTopic(child.id)
-                        : onSelectTopic(child.id)
-                    }
-                  >
-                    <h4
-                      className={`font-semibold text-lg ${
-                        !findParentId(topicsData, child.id) ||
-                        completedTopics.includes(
-                          findParentId(topicsData, child.id)
-                        )
-                          ? "text-gray-800"
-                          : "text-gray-500"
-                      }`}
-                    >
-                      {child.title}
-                    </h4>
-                    {child.children && (
-                      <span className="text-gray-600 font-semibold">
-                        {expandedTopics[child.id] ? "-" : "+"}
-                      </span>
-                    )}
-                    {!child.children && (
-                      <div className="flex items-center">
-                        {!(
-                          !findParentId(topicsData, child.id) ||
-                          completedTopics.includes(
-                            findParentId(topicsData, child.id)
-                          )
-                        ) && (
-                          <span className="ml-2 text-sm text-gray-600">
-                            (Locked)
-                          </span>
-                        )}
-                        {(!findParentId(topicsData, child.id) ||
-                          completedTopics.includes(
-                            findParentId(topicsData, child.id)
-                          )) &&
-                          !completedTopics.includes(child.id) && (
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                onCompleteTopic(child.id);
-                              }}
-                              className="px-2 py-1 bg-green-500 text-white rounded-md text-sm hover:bg-green-600 transition-colors duration-200 ml-2"
-                            >
-                              Complete
-                            </button>
-                          )}
-                        {completedTopics.includes(child.id) && (
-                          <span className="ml-2 text-sm text-green-600">
-                            (Completed)
-                          </span>
-                        )}
-                      </div>
-                    )}
-                    {child.children && expandedTopics[child.id] && (
-                      <div className="ml-4">
-                        {/* You would need to handle deeper nesting here if required */}
-                        {child.children.map((grandchild) => (
-                          <div
-                            key={grandchild.id}
-                            className="flex items-center justify-between bg-blue-50 p-2 rounded-md cursor-pointer hover:bg-blue-100 mb-2"
-                            style={{ paddingLeft: `${(depth + 2) * 1.5}rem` }}
-                            onClick={() => onSelectTopic(grandchild.id)}
-                          >
-                            <h4
-                              className={`font-semibold text-lg ${
-                                !findParentId(topicsData, grandchild.id) ||
-                                completedTopics.includes(
-                                  findParentId(topicsData, grandchild.id)
-                                )
-                                  ? "text-gray-800"
-                                  : "text-gray-500"
-                              }`}
-                            >
-                              {grandchild.title}
-                            </h4>
-                            <div className="flex items-center">
-                              {!(
-                                !findParentId(topicsData, grandchild.id) ||
-                                completedTopics.includes(
-                                  findParentId(topicsData, grandchild.id)
-                                )
-                              ) && (
-                                <span className="ml-2 text-sm text-gray-600">
-                                  (Locked)
-                                </span>
-                              )}
-                              {(!findParentId(topicsData, grandchild.id) ||
-                                completedTopics.includes(
-                                  findParentId(topicsData, grandchild.id)
-                                )) &&
-                                !completedTopics.includes(grandchild.id) && (
-                                  <button
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      onCompleteTopic(grandchild.id);
-                                    }}
-                                    className="px-2 py-1 bg-green-500 text-white rounded-md text-sm hover:bg-green-600 transition-colors duration-200 ml-2"
-                                  >
-                                    Complete
-                                  </button>
-                                )}
-                              {completedTopics.includes(grandchild.id) && (
-                                <span className="ml-2 text-sm text-green-600">
-                                  (Completed)
-                                </span>
-                              )}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                <TopicList // Recursive call
+                  topics={topic.children} // Pass children, not [child]
+                  completedTopics={completedTopics}
+                  onCompleteTopic={onCompleteTopic}
+                  activeTopicId={activeTopicId}
+                  onSelectTopic={onSelectTopic}
+                  depth={depth + 1}
+                  findParentId={findParentId}
+                  topicsData={topicsData}
+                />
               </div>
             )}
           </div>

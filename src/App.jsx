@@ -16,7 +16,7 @@ const topicsData = [
       "Phase 1: Pre-Nursing Foundations & Getting into Nursing School (0-1 year)",
     children: [
       {
-        id: "highSchool",
+        id: "high-school-pre-requisite-courses",
         title: "1. High School & Pre-Requisite Courses",
         children: [
           {
@@ -24,17 +24,17 @@ const topicsData = [
             title: "Biology",
             children: [
               {
-                id: "cellBiology",
+                id: "cell-biology",
                 title: "Cell Biology",
                 children: [
                   {
-                    id: "cellTheory",
+                    id: "cell-theory",
                     title: "Cell theory",
                     content:
                       "All living things are composed of cells, cells are the basic units of structure and function in living things, and all cells come from pre-existing cells.",
                   },
                   {
-                    id: "prokaryoticEukaryotic",
+                    id: "prokaryotic-vs-eukaryotic",
                     title: "Prokaryotic vs. eukaryotic cells",
                     content:
                       "Understanding the fundamental differences in their structure (e.g., nucleus, membrane-bound organelles).",
@@ -56,17 +56,17 @@ const topicsData = [
                           "Powerhouse of the cell, generates ATP through cellular respiration.",
                       },
                       {
-                        id: "er",
+                        id: "endoplasmic-reticulum",
                         title: "Endoplasmic Reticulum (ER)",
                         children: [
                           {
-                            id: "roughER",
+                            id: "rough-er",
                             title: "Rough ER",
                             content:
                               "Protein synthesis and modification due to ribosomes.",
                           },
                           {
-                            id: "smoothER",
+                            id: "smooth-er",
                             title: "Smooth ER",
                             content:
                               "Lipid synthesis, detoxification, calcium storage.",
@@ -79,7 +79,7 @@ const topicsData = [
                         content: "Site of protein synthesis.",
                       },
                       {
-                        id: "golgi",
+                        id: "golgi-apparatus",
                         title: "Golgi Apparatus",
                         content:
                           "Modifies, sorts, and packages proteins and lipids for secretion or delivery to other organelles.",
@@ -97,7 +97,7 @@ const topicsData = [
                           "Involved in detoxification and metabolism of fatty acids.",
                       },
                       {
-                        id: "cellMembrane",
+                        id: "cell-membrane",
                         title: "Cell Membrane",
                         content:
                           "Selectively permeable barrier, composed of a lipid bilayer with embedded proteins.",
@@ -105,1187 +105,80 @@ const topicsData = [
                     ],
                   },
                   {
-                    id: "cellularTransport",
+                    id: "cellular-transport",
                     title: "Cellular Transport",
                     children: [
                       {
-                        id: "passiveTransport",
+                        id: "passive-transport",
                         title: "Passive Transport",
                         content:
                           "Movement of substances across the membrane without requiring energy.",
+                        children: [
+                          {
+                            id: "diffusion",
+                            title: "Diffusion",
+                            content:
+                              "Movement of molecules from an area of high concentration to low concentration.",
+                          },
+                          {
+                            id: "osmosis",
+                            title: "Osmosis",
+                            content:
+                              "Movement of water across a semipermeable membrane from an area of high water concentration to low water concentration.",
+                          },
+                          {
+                            id: "facilitated-diffusion",
+                            title: "Facilitated Diffusion",
+                            content:
+                              "Movement of molecules across the membrane with the help of membrane proteins (channels or carriers) without energy expenditure.",
+                          },
+                        ],
                       },
                       {
-                        id: "diffusion",
-                        title: "Diffusion",
-                        content:
-                          "Movement of molecules from an area of high concentration to low concentration.",
-                      },
-                      {
-                        id: "osmosis",
-                        title: "Osmosis",
-                        content:
-                          "Movement of water across a semipermeable membrane from an area of high water concentration (low solute) to low water concentration (high solute).",
-                      },
-                      {
-                        id: "facilitatedDiffusion",
-                        title: "Facilitated Diffusion",
-                        content:
-                          "Movement of molecules across the membrane with the help of transport proteins.",
-                      },
-                      {
-                        id: "activeTransport",
+                        id: "active-transport",
                         title: "Active Transport",
                         content:
-                          "Movement of substances across the membrane requiring energy (ATP).",
+                          "Movement of substances across the membrane against their concentration gradient, requiring energy (usually ATP) and membrane proteins (pumps).",
                       },
                       {
-                        id: "primaryActiveTransport",
-                        title: "Primary Active Transport",
+                        id: "vesicular-transport",
+                        title: "Vesicular Transport",
                         content:
-                          "Energy directly used to move substances against their concentration gradient (e.g., Na+/K+ pump).",
-                      },
-                      {
-                        id: "secondaryActiveTransport",
-                        title: "Secondary Active Transport",
-                        content:
-                          "Energy stored in an ionic gradient (created by primary active transport) is used to move another substance against its concentration gradient (symport/antiport).",
-                      },
-                      {
-                        id: "bulkTransport",
-                        title: "Bulk Transport",
-                        content:
-                          "Movement of large particles or large amounts of substances across the membrane.",
-                      },
-                      {
-                        id: "endocytosis",
-                        title: "Endocytosis",
-                        content:
-                          "Cell engulfs substances from the outside (phagocytosis - solids, pinocytosis - liquids, receptor-mediated).",
-                      },
-                      {
-                        id: "exocytosis",
-                        title: "Exocytosis",
-                        content:
-                          "Cell releases substances to the outside by fusion of vesicles with the plasma membrane.",
-                      },
-                      {
-                        id: "fluidBalance",
-                        title: "Critical for fluid balance",
-                        content:
-                          "Regulates water movement and solute concentrations in the body.",
-                      },
-                      {
-                        id: "drugMovement",
-                        title: "Drug movement",
-                        content:
-                          "Impacts how drugs are absorbed, distributed, and eliminated in the body.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "basicBiochemistry",
-                    title: "Basic Biochemistry",
-                    children: [
-                      {
-                        id: "macromolecules",
-                        title: "Macromolecules",
-                        content:
-                          "Large biological molecules essential for life.",
+                          "Movement of large particles or bulk substances across the membrane by vesicles (small membrane-bound sacs).",
                         children: [
                           {
-                            id: "carbohydrates",
-                            title: "Carbohydrates",
+                            id: "endocytosis",
+                            title: "Endocytosis",
                             content:
-                              "Primary source of energy, structural components (sugars, starches, cellulose).",
-                          },
-                          {
-                            id: "lipids",
-                            title: "Lipids",
-                            content:
-                              "Energy storage, structural components of membranes, hormones (fats, oils, phospholipids, steroids).",
-                          },
-                          {
-                            id: "proteins",
-                            title: "Proteins",
-                            content:
-                              "Diverse functions including enzymes, structural support, transport, signaling (amino acid building blocks).",
-                          },
-                          {
-                            id: "nucleicAcids",
-                            title: "Nucleic Acids",
-                            content:
-                              "Store and transmit genetic information (DNA, RNA).",
-                          },
-                        ],
-                      },
-                      {
-                        id: "enzymes",
-                        title: "Enzymes",
-                        content:
-                          "Biological catalysts that speed up chemical reactions.",
-                        children: [
-                          {
-                            id: "enzymeFunction",
-                            title: "Function",
-                            content: "Lower activation energy of reactions.",
-                          },
-                          {
-                            id: "enzymeFactors",
-                            title: "Factors affecting activity",
-                            content:
-                              "Temperature, pH, substrate concentration, inhibitors.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "phScale",
-                        title: "pH Scale",
-                        content:
-                          "Measures the acidity or alkalinity of a solution (0-14).",
-                      },
-                      {
-                        id: "buffers",
-                        title: "Buffers",
-                        content: "Solutions that resist changes in pH.",
-                      },
-                      {
-                        id: "metabolicProcesses",
-                        title: "Fundamental for metabolic processes",
-                        content:
-                          "Underpins all biochemical reactions in the body.",
-                      },
-                      {
-                        id: "drugActionsBiochem",
-                        title: "Drug actions",
-                        content:
-                          "Many drugs interact with enzymes or other biomolecules.",
-                      },
-                      {
-                        id: "acidBaseBalanceBiochem",
-                        title: "Acid-base balance",
-                        content: "Buffers in the blood maintain a stable pH.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "cellularRespiration",
-                    title: "Cellular Respiration",
-                    content: "Process by which cells generate ATP (energy).",
-                    children: [
-                      {
-                        id: "glycolysis",
-                        title: "Glycolysis",
-                        content:
-                          "Breakdown of glucose into pyruvate (occurs in the cytoplasm).",
-                      },
-                      {
-                        id: "krebsCycle",
-                        title: "Krebs Cycle (Citric Acid Cycle)",
-                        content:
-                          "Oxidation of pyruvate to produce electron carriers (NADH, FADH2) and some ATP (occurs in the mitochondrial matrix).",
-                      },
-                      {
-                        id: "etc",
-                        title: "Electron Transport Chain (ETC)",
-                        content:
-                          "Transfer of electrons to generate a large amount of ATP (oxidative phosphorylation, occurs in the inner mitochondrial membrane).",
-                      },
-                      {
-                        id: "atpGeneration",
-                        title: "Basic understanding of ATP generation",
-                        content: "Primary energy currency of the cell.",
-                      },
-                      {
-                        id: "aerobicPathways",
-                        title: "Aerobic pathways",
-                        content: "Require oxygen (Krebs cycle, ETC).",
-                      },
-                      {
-                        id: "anaerobicPathways",
-                        title: "Anaerobic pathways",
-                        content:
-                          "Do not require oxygen (glycolysis, fermentation).",
-                      },
-                      {
-                        id: "energyDemands",
-                        title: "Key for understanding energy demands",
-                        content: "Different tissues have varying energy needs.",
-                      },
-                      {
-                        id: "hypoxia",
-                        title: "Hypoxia",
-                        content: "Lack of oxygen impacts ATP production.",
-                      },
-                      {
-                        id: "shock",
-                        title: "Shock",
-                        content: "Can lead to impaired cellular respiration.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "basicGenetics",
-                    title: "Basic Genetics",
-                    content: "Study of heredity and genes.",
-                    children: [
-                      {
-                        id: "dnaRnaStructure",
-                        title: "DNA/RNA structure",
-                        content:
-                          "Double helix of DNA, single strand of RNA, nitrogenous bases (A, T/U, C, G).",
-                      },
-                      {
-                        id: "replication",
-                        title: "Replication",
-                        content: "Process of copying DNA.",
-                      },
-                      {
-                        id: "proteinSynthesis",
-                        title: "Protein synthesis",
-                        children: [
-                          {
-                            id: "transcription",
-                            title: "Transcription",
-                            content: "DNA is transcribed into mRNA.",
-                          },
-                          {
-                            id: "translation",
-                            title: "Translation",
-                            content:
-                              "mRNA is translated into a protein sequence at the ribosome.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "mitosisMeiosis",
-                        title: "Mitosis/Meiosis",
-                        content:
-                          "Cell division processes (mitosis for somatic cells, meiosis for gametes).",
-                      },
-                      {
-                        id: "mendelianGenetics",
-                        title: "Mendelian genetics",
-                        content:
-                          "Basic principles of inheritance (dominant/recessive alleles, Punnett squares).",
-                      },
-                      {
-                        id: "pharmacogenetics",
-                        title: "Relevant for pharmacogenetics",
-                        content:
-                          "How genetic variations influence drug response.",
-                      },
-                      {
-                        id: "geneticPredispositions",
-                        title: "Genetic predispositions",
-                        content:
-                          "Understanding inherited risks for certain conditions.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "introBodySystems",
-                    title: "Introduction to Body Systems",
-                    children: [
-                      {
-                        id: "majorOrganSystems",
-                        title: "Overview of major organ systems",
-                        content:
-                          "Integumentary, skeletal, muscular, nervous, endocrine, cardiovascular, lymphatic, respiratory, digestive, urinary, reproductive.",
-                      },
-                      {
-                        id: "primaryFunctions",
-                        title: "Primary functions",
-                        content:
-                          "Basic understanding of what each system does.",
-                      },
-                      {
-                        id: "homeostasis",
-                        title: "Homeostasis",
-                        children: [
-                          {
-                            id: "centralConcept",
-                            title:
-                              "The central concept of maintaining internal stability",
-                            content:
-                              "Regulation of temperature, pH, blood glucose, etc.",
-                          },
-                          {
-                            id: "physiologicalRegulation",
-                            title: "Underpins all physiological regulation",
-                            content: "Essential for normal body function.",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                id: "chemistry",
-                title: "Chemistry",
-                children: [
-                  {
-                    id: "generalChemistry",
-                    title: "General Chemistry",
-                    children: [
-                      {
-                        id: "atomicStructure",
-                        title: "Atomic Structure",
-                        children: [
-                          {
-                            id: "protons",
-                            title: "Protons",
-                            content:
-                              "Positively charged particles in the nucleus.",
-                          },
-                          {
-                            id: "neutrons",
-                            title: "Neutrons",
-                            content:
-                              "Neutrally charged particles in the nucleus.",
-                          },
-                          {
-                            id: "electrons",
-                            title: "Electrons",
-                            content:
-                              "Negatively charged particles orbiting the nucleus.",
-                          },
-                          {
-                            id: "isotopes",
-                            title: "Isotopes",
-                            content:
-                              "Atoms of the same element with different numbers of neutrons.",
-                          },
-                          {
-                            id: "atomicNumber",
-                            title: "Atomic number",
-                            content:
-                              "Number of protons in the nucleus (defines the element).",
-                          },
-                          {
-                            id: "massNumber",
-                            title: "Mass number",
-                            content:
-                              "Total number of protons and neutrons in the nucleus.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "periodicTable",
-                        title: "Periodic Table",
-                        children: [
-                          {
-                            id: "basicOrganization",
-                            title: "Basic organization",
-                            content:
-                              "Elements arranged by increasing atomic number, grouped by similar properties.",
-                          },
-                          {
-                            id: "trends",
-                            title: "Trends",
-                            content:
-                              "Electronegativity, ionization energy, atomic radius.",
-                          },
-                          {
-                            id: "propertiesOfElements",
-                            title: "Properties of elements",
-                            content: "Metals, nonmetals, metalloids.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "chemicalBonding",
-                        title: "Chemical Bonding",
-                        content: "Forces that hold atoms together.",
-                        children: [
-                          {
-                            id: "ionicBonds",
-                            title: "Ionic bonds",
-                            content:
-                              "Transfer of electrons between atoms with large electronegativity differences.",
-                          },
-                          {
-                            id: "covalentBonds",
-                            title: "Covalent bonds",
-                            content: "Sharing of electrons between atoms.",
-                          },
-                          {
-                            id: "polarCovalent",
-                            title: "Polar covalent",
-                            content: "Unequal sharing of electrons.",
-                          },
-                          {
-                            id: "nonpolarCovalent",
-                            title: "Nonpolar covalent",
-                            content: "Equal sharing of electrons.",
-                          },
-                          {
-                            id: "metallicBonds",
-                            title: "Metallic bonds",
-                            content:
-                              "Sharing of electrons in a 'sea' of electrons (in metals).",
-                          },
-                          {
-                            id: "electronegativity",
-                            title: "Electronegativity",
-                            content:
-                              "Ability of an atom to attract electrons in a chemical bond.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "chemicalReactions",
-                        title: "Chemical Reactions",
-                        content:
-                          "Processes involving the rearrangement of atoms and molecules.",
-                        children: [
-                          {
-                            id: "reactionTypes",
-                            title: "Types",
+                              "Process by which cells engulf substances from outside by forming vesicles.",
                             children: [
                               {
-                                id: "synthesis",
-                                title: "Synthesis",
+                                id: "phagocytosis",
+                                title: "Phagocytosis",
                                 content:
-                                  "Two or more reactants combine to form a single product.",
+                                  'Cellular "eating" of large particles or cells.',
                               },
                               {
-                                id: "decomposition",
-                                title: "Decomposition",
+                                id: "pinocytosis",
+                                title: "Pinocytosis",
                                 content:
-                                  "A single reactant breaks down into two or more products.",
+                                  'Cellular "drinking" of extracellular fluid containing dissolved solutes.',
                               },
                               {
-                                id: "singleReplacement",
-                                title: "Single replacement",
+                                id: "receptor-mediated-endocytosis",
+                                title: "Receptor-Mediated Endocytosis",
                                 content:
-                                  "One element replaces another in a compound.",
-                              },
-                              {
-                                id: "doubleReplacement",
-                                title: "Double replacement",
-                                content:
-                                  "Ions in two compounds exchange places.",
+                                  "Specific molecules bind to receptors on the cell surface, triggering vesicle formation.",
                               },
                             ],
                           },
                           {
-                            id: "balancingEquations",
-                            title: "Balancing equations",
+                            id: "exocytosis",
+                            title: "Exocytosis",
                             content:
-                              "Ensuring the number of atoms of each element is the same on both sides of the equation.",
-                          },
-                          {
-                            id: "stoichiometry",
-                            title: "Stoichiometry",
-                            content:
-                              "Quantitative relationships between reactants and products in chemical reactions.",
-                          },
-                          {
-                            id: "moleConcept",
-                            title: "Mole concept",
-                            content: "Avogadro's number, molar mass.",
+                              "Process by which cells release substances to the outside by the fusion of vesicles with the plasma membrane.",
                           },
                         ],
-                      },
-                      {
-                        id: "statesOfMatter",
-                        title: "States of Matter",
-                        content: "Physical forms of substances.",
-                        children: [
-                          {
-                            id: "solids",
-                            title: "Solids",
-                            content: "Definite shape and volume.",
-                          },
-                          {
-                            id: "liquids",
-                            title: "Liquids",
-                            content: "Definite volume but no definite shape.",
-                          },
-                          {
-                            id: "gases",
-                            title: "Gases",
-                            content: "No definite shape or volume.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "gasLaws",
-                        title: "Gas Laws",
-                        content:
-                          "Relationships between pressure, volume, temperature, and amount of gas.",
-                        children: [
-                          {
-                            id: "boylesLaw",
-                            title: "Boyle's Law",
-                            content:
-                              "Pressure and volume are inversely proportional at constant temperature.",
-                          },
-                          {
-                            id: "charlesLaw",
-                            title: "Charles' Law",
-                            content:
-                              "Volume and temperature are directly proportional at constant pressure.",
-                          },
-                          {
-                            id: "idealGasLaw",
-                            title: "Ideal Gas Law",
-                            content:
-                              "PV = nRT (CRITICAL for anesthesia equipment, gas delivery).",
-                          },
-                        ],
-                      },
-                      {
-                        id: "solutions",
-                        title: "Solutions",
-                        content: "Homogeneous mixtures.",
-                        children: [
-                          {
-                            id: "molarity",
-                            title: "Molarity",
-                            content: "Moles of solute per liter of solution.",
-                          },
-                          {
-                            id: "dilutions",
-                            title: "Dilutions",
-                            content:
-                              "Reducing the concentration of a solution.",
-                          },
-                          {
-                            id: "solubility",
-                            title: "Solubility",
-                            content:
-                              "Ability of a solute to dissolve in a solvent.",
-                          },
-                          {
-                            id: "colligativeProperties",
-                            title: "Colligative properties",
-                            content:
-                              "Properties of solutions that depend on the number of solute particles, not their identity.",
-                          },
-                          {
-                            id: "osmoticPressure",
-                            title: "Osmotic pressure",
-                            content:
-                              "Pressure required to prevent the flow of water across a semipermeable membrane (fundamental for IV fluids, cellular integrity).",
-                          },
-                        ],
-                      },
-                      {
-                        id: "acidsAndBases",
-                        title: "Acids and Bases",
-                        content:
-                          "Substances that donate or accept protons (H+).",
-                        children: [
-                          {
-                            id: "definitions",
-                            title: "Definitions",
-                            children: [
-                              {
-                                id: "arrhenius",
-                                title: "Arrhenius",
-                                content:
-                                  "Acids produce H+ in water, bases produce OH- in water.",
-                              },
-                              {
-                                id: "bronstedLowry",
-                                title: "Brønsted-Lowry",
-                                content:
-                                  "Acids are proton donors, bases are proton acceptors.",
-                              },
-                            ],
-                          },
-                          {
-                            id: "phCalculations",
-                            title: "pH calculations",
-                            content:
-                              "Determining the acidity or alkalinity of a solution.",
-                          },
-                          {
-                            id: "strongWeakAcidsBases",
-                            title: "Strong vs. weak acids/bases",
-                            content: "Degree of ionization in water.",
-                          },
-                          {
-                            id: "titration",
-                            title: "Titration",
-                            content:
-                              "Determining the concentration of a solution using a reaction with a solution of known concentration.",
-                          },
-                          {
-                            id: "acidBaseBalanceChem",
-                            title: "Essential for acid-base balance",
-                            content:
-                              "Understanding physiological pH regulation.",
-                          },
-                          {
-                            id: "drugPreparation",
-                            title: "Drug preparation",
-                            content:
-                              "Many drugs are salts of weak acids or bases.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "thermodynamicsBasic",
-                        title: "Thermodynamics (Basic)",
-                        content:
-                          "Study of energy changes in chemical and physical processes.",
-                        children: [
-                          {
-                            id: "energyChanges",
-                            title: "Energy changes in reactions",
-                            content:
-                              "Exothermic (release heat) and endothermic (absorb heat) reactions.",
-                          },
-                          {
-                            id: "spontaneity",
-                            title: "Spontaneity",
-                            content:
-                              "Whether a reaction will occur without external input.",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    id: "organicChemistryIntro",
-                    title: "Organic Chemistry (Introductory)",
-                    content: "Study of carbon-containing compounds.",
-                    children: [
-                      {
-                        id: "hydrocarbons",
-                        title: "Hydrocarbons",
-                        content:
-                          "Compounds containing only carbon and hydrogen.",
-                        children: [
-                          {
-                            id: "alkanes",
-                            title: "Alkanes",
-                            content: "Single bonds.",
-                          },
-                          {
-                            id: "alkenes",
-                            title: "Alkenes",
-                            content: "Double bonds.",
-                          },
-                          {
-                            id: "alkynes",
-                            title: "Alkynes",
-                            content: "Triple bonds.",
-                          },
-                          {
-                            id: "aromaticCompounds",
-                            title: "Aromatic compounds",
-                            content: "Contain benzene rings.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "functionalGroups",
-                        title: "Functional Groups",
-                        content:
-                          "Specific groups of atoms within molecules that have characteristic properties.",
-                        children: [
-                          {
-                            id: "alcohols",
-                            title: "Alcohols",
-                            content: "-OH.",
-                          },
-                          { id: "ethers", title: "Ethers", content: "R-O-R'." },
-                          {
-                            id: "aldehydes",
-                            title: "Aldehydes",
-                            content: "-CHO.",
-                          },
-                          {
-                            id: "ketones",
-                            title: "Ketones",
-                            content: "R-CO-R'.",
-                          },
-                          {
-                            id: "carboxylicAcids",
-                            title: "Carboxylic acids",
-                            content: "-COOH.",
-                          },
-                          { id: "esters", title: "Esters", content: "-COOR'." },
-                          {
-                            id: "amines",
-                            title: "Amines",
-                            content: "-NH2, -NHR, -NR2.",
-                          },
-                          {
-                            id: "amids",
-                            title: "Amides",
-                            content: "-CONH2, -CONHR, -CONR2.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "drugStructures",
-                        title: "Crucial for understanding drug structures",
-                        content: "Many drugs contain these functional groups.",
-                      },
-                      {
-                        id: "drugMetabolism",
-                        title: "Drug metabolism",
-                        content:
-                          "Enzymes often modify these functional groups.",
-                      },
-                      {
-                        id: "drugActionsOrganic",
-                        title: "Drug actions",
-                        content:
-                          "Interactions with biological molecules often involve functional groups.",
-                      },
-                      {
-                        id: "isomerism",
-                        title: "Isomerism",
-                        content:
-                          "Molecules with the same molecular formula but different structural arrangements.",
-                        children: [
-                          {
-                            id: "structuralIsomers",
-                            title: "Structural isomers",
-                            content: "Different connectivity of atoms.",
-                          },
-                          {
-                            id: "geometricIsomers",
-                            title: "Geometric isomers (cis/trans)",
-                            content:
-                              "Different spatial arrangement around a double bond or ring.",
-                          },
-                          {
-                            id: "stereoisomers",
-                            title: "Stereoisomers (enantiomers)",
-                            content:
-                              "Non-superimposable mirror images (think chiral drugs).",
-                          },
-                        ],
-                      },
-                      {
-                        id: "biomolecules",
-                        title: "Biomolecules",
-                        content: "Organic molecules essential for life.",
-                        children: [
-                          {
-                            id: "biomoleculeStructure",
-                            title:
-                              "Basic structure of carbohydrates, lipids, proteins, nucleic acids",
-                            content:
-                              "Linking to their chemical components (e.g., monosaccharides in carbohydrates, fatty acids in lipids, amino acids in proteins, nucleotides in nucleic acids).",
-                          },
-                        ],
-                      },
-                    ],
-                  },
-                  {
-                    id: "biochemistryAdvanced",
-                    title: "Biochemistry (Advanced within Chemistry Context)",
-                    children: [
-                      {
-                        id: "enzymeKinetics",
-                        title: "Enzyme Kinetics",
-                        content:
-                          "Study of the rates of enzyme-catalyzed reactions.",
-                      },
-                      {
-                        id: "michaelisMenten",
-                        title: "Michaelis-Menten (basic)",
-                        content:
-                          "Relationship between enzyme velocity and substrate concentration.",
-                      },
-                      {
-                        id: "metabolicPathwaysOverview",
-                        title: "Metabolic Pathways (Overview)",
-                        content:
-                          "Series of interconnected biochemical reactions.",
-                      },
-                      {
-                        id: "pathwayExamples",
-                        title: "Examples",
-                        content:
-                          "Glycolysis, gluconeogenesis, fatty acid oxidation/synthesis, urea cycle: Basic understanding of interconnections.",
-                      },
-                      {
-                        id: "proteinStructureFunction",
-                        title: "Protein Structure & Function",
-                        children: [
-                          {
-                            id: "folding",
-                            title: "More detailed on folding",
-                            content:
-                              "Primary, secondary, tertiary, quaternary structures.",
-                          },
-                          {
-                            id: "denaturation",
-                            title: "Denaturation",
-                            content:
-                              "Loss of protein's native structure and function.",
-                          },
-                        ],
-                      },
-                      {
-                        id: "dnaRnaReplicationTranscriptionTranslation",
-                        title: "DNA Replication, Transcription, Translation",
-                        content:
-                          "Molecular mechanisms: Basic understanding of the steps involved.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "whyChemCritical",
-                    title: "Why Chemistry is CRITICAL",
-                    children: [
-                      {
-                        id: "anesthesiaAppliedChem",
-                        title: "Anesthesia is fundamentally applied chemistry",
-                        content:
-                          "Understanding the chemical properties and interactions of anesthetic drugs.",
-                      },
-                      {
-                        id: "drugInteractionsChem",
-                        title: "Understanding drug interactions",
-                        content:
-                          "How different drugs react with each other in the body.",
-                      },
-                      {
-                        id: "acidBaseImbalancesChem",
-                        title: "Acid-base imbalances",
-                        content:
-                          "Chemical principles underlying pH regulation.",
-                      },
-                      {
-                        id: "gasPropertiesChem",
-                        title: "Gas properties",
-                        content:
-                          "Behavior of inhaled anesthetics and respiratory gases.",
-                      },
-                      {
-                        id: "metabolicProcessesChem",
-                        title: "Metabolic processes",
-                        content: "How the body processes and eliminates drugs.",
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                id: "physics",
-                title:
-                  "Physics (Helpful, often required for CRNA school or specific pre-reqs)",
-                children: [
-                  {
-                    id: "mechanics",
-                    title: "Mechanics",
-                    content: "Study of motion and forces.",
-                    children: [
-                      {
-                        id: "forces",
-                        title: "Forces",
-                        content:
-                          "Interactions that can change an object's motion.",
-                      },
-                      {
-                        id: "motion",
-                        title: "Motion",
-                        content: "Displacement, velocity, acceleration.",
-                      },
-                      {
-                        id: "newtonsLaws",
-                        title: "Newton's laws",
-                        content: "Laws governing motion.",
-                      },
-                      {
-                        id: "work",
-                        title: "Work",
-                        content:
-                          "Energy transferred by a force acting over a distance.",
-                      },
-                      {
-                        id: "energy",
-                        title: "Energy",
-                        content: "Ability to do work (kinetic, potential).",
-                      },
-                      {
-                        id: "power",
-                        title: "Power",
-                        content: "Rate at which work is done.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "fluidDynamics",
-                    title: "Fluid Dynamics",
-                    content: "Study of fluids (liquids and gases) in motion.",
-                    children: [
-                      {
-                        id: "pressure",
-                        title: "Pressure",
-                        content: "Force per unit area.",
-                      },
-                      {
-                        id: "flow",
-                        title: "Flow",
-                        content:
-                          "Volume of fluid passing a point per unit time.",
-                      },
-                      {
-                        id: "viscosity",
-                        title: "Viscosity",
-                        content: "Resistance to flow.",
-                      },
-                      {
-                        id: "bernoullisPrinciple",
-                        title: "Bernoulli's principle",
-                        content:
-                          "Relationship between fluid speed, pressure, and height.",
-                      },
-                      {
-                        id: "poiseuillesLaw",
-                        title: "Poiseuille's Law",
-                        content:
-                          "Factors affecting laminar flow in a tube (crucial for IV flow, airway resistance, blood flow).",
-                      },
-                    ],
-                  },
-                  {
-                    id: "thermodynamicsPhysics",
-                    title: "Thermodynamics",
-                    content:
-                      "Study of heat and its relation to other forms of energy.",
-                    children: [
-                      {
-                        id: "heatTransfer",
-                        title: "Heat transfer",
-                        content: "Conduction, convection, radiation.",
-                      },
-                      {
-                        id: "specificHeat",
-                        title: "Specific heat",
-                        content:
-                          "Amount of heat required to raise the temperature of a substance.",
-                      },
-                      {
-                        id: "phaseChanges",
-                        title: "Phase changes",
-                        content: "Solid to liquid to gas and vice versa.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "gasLawsPhysics",
-                    title: "Gas Laws (Reiterated for emphasis)",
-                    children: [
-                      {
-                        id: "boylesCharlesGayLussacsAvogadros",
-                        title:
-                          "Boyle's, Charles', Gay-Lussac's, Avogadro's, Ideal Gas Law",
-                        content: "PV = nRT.",
-                      },
-                      {
-                        id: "daltonsLaw",
-                        title: "Dalton's Law of Partial Pressures",
-                        content:
-                          "Total pressure of a gas mixture is the sum of the partial pressures of each gas.",
-                      },
-                      {
-                        id: "henrysLaw",
-                        title: "Henry's Law",
-                        content:
-                          "Solubility of a gas in a liquid is directly proportional to the partial pressure of the gas above the liquid (Absolutely essential for inhaled anesthetics, gas tanks, oxygen delivery, understanding embolisms).",
-                      },
-                    ],
-                  },
-                  {
-                    id: "electricityMagnetism",
-                    title: "Electricity and Magnetism (Basic)",
-                    content: "Study of electric charge and magnetic forces.",
-                    children: [
-                      {
-                        id: "circuits",
-                        title: "Circuits",
-                        content: "Pathways for electric current.",
-                      },
-                      {
-                        id: "resistors",
-                        title: "Resistors",
-                        content: "Components that oppose current flow.",
-                      },
-                      {
-                        id: "ohmsLaw",
-                        title: "Ohm's Law",
-                        content:
-                          "Relationship between voltage, current, and resistance (relevant for patient monitoring equipment).",
-                      },
-                    ],
-                  },
-                  {
-                    id: "wavePhenomena",
-                    title: "Wave Phenomena (Basic)",
-                    content: "Study of waves, including sound and light.",
-                    children: [
-                      {
-                        id: "sound",
-                        title: "Sound",
-                        content: "Pressure waves.",
-                      },
-                      {
-                        id: "light",
-                        title: "Light",
-                        content: "Electromagnetic waves.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "whyPhysicsCritical",
-                    title: "Why Physics is CRITICAL",
-                    children: [
-                      {
-                        id: "anesthesiaMachines",
-                        title:
-                          "Anesthesia machines, ventilators, monitoring equipment",
-                        content: "Function based on physical principles.",
-                      },
-                      {
-                        id: "gasDeliveryPhysics",
-                        title: "Gas delivery",
-                        content: "Understanding flow rates, pressures.",
-                      },
-                      {
-                        id: "patientPhysiologicalResponses",
-                        title: "Patient physiological responses",
-                        content:
-                          "Blood flow, airway dynamics are governed by physical laws.",
-                      },
-                    ],
-                  },
-                ],
-              },
-              {
-                id: "mathematics",
-                title:
-                  "Mathematics (Algebra, Pre-Calculus, potentially Calculus, Statistics)",
-                children: [
-                  {
-                    id: "algebra",
-                    title: "Algebra",
-                    children: [
-                      {
-                        id: "solvingEquations",
-                        title: "Solving equations",
-                        content: "Finding the value of unknown variables.",
-                      },
-                      {
-                        id: "inequalities",
-                        title: "Inequalities",
-                        content: "Comparing values.",
-                      },
-                      {
-                        id: "functions",
-                        title: "Functions",
-                        content: "Relationships between variables.",
-                      },
-                      {
-                        id: "graphing",
-                        title: "Graphing",
-                        content:
-                          "Visual representation of mathematical relationships.",
-                      },
-                    ],
-                  },
-                  {
-                    id: "preCalculus",
-                    title: "Pre-Calculus",
-                    children: [
-                      {
-                        id: "trigonometry",
-                        title: "Trigonometry",
-                        content:
-                          "Study of triangles and trigonometric functions.",
-                      },
-                      {
-                        id: "logarithms",
-                        title: "Logarithms",
-                        content:
-                          "Inverse of exponential functions (especially for pH, drug concentrations).",
-                      },
-                      {
-                        id: "exponentialFunctions",
-                        title: "Exponential functions",
-                        content:
-                          "Modeling growth and decay (drug elimination).",
-                      },
-                    ],
-                  },
-                  {
-                    id: "calculus",
-                    title: "Calculus (Differential & Integral)",
-                    children: [
-                      {
-                        id: "ratesOfChange",
-                        title: "Rates of change",
-                        content: "Derivatives.",
-                      },
-                      {
-                        id: "areasUnderCurves",
-                        title: "Areas under curves",
-                        content: "Integrals.",
-                      },
-                      {
-                        id: "physiologicalModels",
-                        title:
-                          "Beneficial for understanding physiological models, drug kinetics",
-                        content:
-                          "More in-depth analysis of biological processes.",
-                      },
-                      {
-                        id: "nursingSchoolEntry",
-                        title:
-                          "Often not explicitly required for nursing school entry.",
-                        content: "",
-                      },
-                    ],
-                  },
-                  {
-                    id: "statistics",
-                    title: "Statistics",
-                    content:
-                      "Collection, analysis, interpretation, and presentation of data.",
-                    children: [
-                      {
-                        id: "descriptiveStatistics",
-                        title: "Descriptive statistics",
-                        content:
-                          "Summarizing data (mean, median, mode, standard deviation).",
-                      },
-                      {
-                        id: "inferentialStatistics",
-                        title: "Inferential statistics",
-                        content:
-                          "Making inferences about populations based on samples (hypothesis testing, t-tests, ANOVA, correlation, regression).",
-                      },
-                      {
-                        id: "probability",
-                        title: "Probability",
-                        content: "Likelihood of events occurring.",
-                      },
-                      {
-                        id: "understandingResearch",
-                        title:
-                          "Absolutely essential for understanding research",
-                        content: "Interpreting study findings.",
-                      },
-                      {
-                        id: "evidenceBasedPractice",
-                        title: "Evidence-based practice",
-                        content: "Applying research to clinical decisions.",
-                      },
-                      {
-                        id: "dnpProjects",
-                        title: "DNP projects",
-                        content: "Often involve statistical analysis.",
                       },
                     ],
                   },
@@ -1293,31 +186,135 @@ const topicsData = [
               },
             ],
           },
+          {
+            id: "chemistry",
+            title: "Chemistry",
+            content:
+              "Basic principles of general and organic chemistry (atomic structure, bonding, reactions, functional groups).",
+          },
+          {
+            id: "anatomy-physiology",
+            title: "Anatomy & Physiology",
+            content:
+              "Basic understanding of human body structure and function.",
+          },
+          {
+            id: "microbiology",
+            title: "Microbiology",
+            content:
+              "Introduction to microorganisms (bacteria, viruses, fungi, parasites) and their role in health and disease.",
+          },
+          {
+            id: "math",
+            title: "Mathematics",
+            children: [
+              {
+                id: "algebra",
+                title: "Algebra",
+                content:
+                  "Solving equations, manipulating expressions, understanding the value of unknown variables.",
+              },
+              {
+                id: "inequalities",
+                title: "Inequalities",
+                content: "Comparing values.",
+              },
+              {
+                id: "functions",
+                title: "Functions",
+                content: "Relationships between variables.",
+              },
+              {
+                id: "graphing",
+                title: "Graphing",
+                content: "Visual representation of mathematical relationships.",
+              },
+            ],
+          },
+          {
+            id: "pre-calculus",
+            title: "Pre-Calculus",
+            children: [
+              {
+                id: "trigonometry",
+                title: "Trigonometry",
+                content: "Study of triangles and trigonometric functions.",
+              },
+              {
+                id: "logarithms",
+                title: "Logarithms",
+                content:
+                  "Inverse of exponential functions (especially for pH, drug concentrations).",
+              },
+              {
+                id: "exponential-functions",
+                title: "Exponential functions",
+                content: "Modeling growth and decay (drug elimination).",
+              },
+            ],
+          },
+          {
+            id: "calculus",
+            title: "Calculus (Differential & Integral)",
+            content:
+              "Rates of change (derivatives), areas under curves (integrals). Beneficial for understanding physiological models, drug kinetics (more in-depth analysis of biological processes). Often not explicitly required for nursing school entry.",
+          },
+          {
+            id: "statistics",
+            title: "Statistics",
+            children: [
+              {
+                id: "descriptive-statistics",
+                title: "Descriptive statistics",
+                content:
+                  "Summarizing data (mean, median, mode, standard deviation).",
+              },
+              {
+                id: "inferential-statistics",
+                title: "Inferential statistics",
+                content:
+                  "Making inferences about populations based on samples (hypothesis testing, t-tests, ANOVA, correlation, regression). Absolutely essential for understanding research (interpreting study findings), evidence-based practice (applying research to clinical decisions), and DNP projects (often involve statistical analysis).",
+              },
+              {
+                id: "probability",
+                title: "Probability",
+                content: "Likelihood of events occurring.",
+              },
+            ],
+          },
         ],
       },
       {
-        id: "volunteerExperience",
+        id: "volunteer-healthcare-experience",
         title: "2. Volunteer/Healthcare Experience",
         children: [
           {
-            id: "volunteeringInHospitals",
-            title: "Volunteering in hospitals",
-            content: "Exposure to the healthcare environment.",
-          },
-          {
-            id: "variousUnits",
-            title: "Various units, especially ICU/ED if possible",
-            content: "Observing critical care settings.",
-          },
-          {
-            id: "nursingHomesFreeClinics",
-            title: "Nursing homes, free clinics",
-            content: "Interacting with different patient populations.",
+            id: "activities",
+            title: "Activities",
+            children: [
+              {
+                id: "volunteering-in-hospitals",
+                title: "Volunteering in hospitals",
+                content: "Exposure to the healthcare environment.",
+              },
+              {
+                id: "volunteering-icu-ed",
+                title: "Various units, especially ICU/ED if possible",
+                content: "Observing critical care settings.",
+              },
+              {
+                id: "nursing-homes-free-clinics",
+                title: "Nursing homes, free clinics",
+                content: "Interacting with different patient populations.",
+              },
+            ],
           },
         ],
       },
+      // You can add more top-level topics within Phase 1 here as needed
     ],
   },
+  ,
   {
     id: "phase2",
     title: "Phase 2: Core Nursing Knowledge (1-2 years)",
