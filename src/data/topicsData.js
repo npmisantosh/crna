@@ -271,8 +271,9 @@ const topicsData = [
             ]
           }
         ]
-      },
-      {
+    },
+      
+    {
         id: "phase2",
         title: "Phase 2: Bachelor of Science in Nursing (BSN) Degree (3-4 years)",
         children: [
@@ -1778,375 +1779,653 @@ const topicsData = [
         ]
     },
     {
-      id: "phase3",
-      title: "Phase 3: Clinical Rotations & Advanced Concepts (2-3 years)",
-      children: [
-        {
-          id: "medicalSurgicalNursing",
-          title: "1. Medical-Surgical Nursing",
-          children: [
-            {
-              id: "cardiovascular",
-              title: "Cardiovascular",
-              children: [
-                {
-                  id: "heartFailure",
-                  title: "Heart Failure",
-                  content: "Pathophysiology, management.",
-                },
-                {
-                  id: "myocardialInfarction",
-                  title: "Myocardial Infarction",
-                  content: "Diagnosis, treatment.",
-                },
-                {
-                  id: "dysrhythmias",
-                  title: "Dysrhythmias",
-                  content: "Types, interpretation, interventions.",
-                },
-                {
-                  id: "hypertension",
-                  title: "Hypertension",
-                  content: "Management and complications.",
-                },
-                {
-                  id: "peripheralVascularDisease",
-                  title: "Peripheral Vascular Disease",
-                  content: "Arterial and venous disorders.",
-                },
-              ],
-            },
-            {
-              id: "respiratory",
-              title: "Respiratory",
-              children: [
-                {
-                  id: "copd",
-                  title: "COPD",
-                  content: "Emphysema, chronic bronchitis.",
-                },
-                {
-                  id: "asthma",
-                  title: "Asthma",
-                  content: "Acute and chronic management.",
-                },
-                {
-                  id: "pneumonia",
-                  title: "Pneumonia",
-                  content: "Types, treatment.",
-                },
-                {
-                  id: "acuteRespiratoryFailure",
-                  title: "Acute Respiratory Failure",
-                  content: "Causes, interventions.",
-                },
-                {
-                  id: "mechanicalVentilation",
-                  title: "Mechanical Ventilation",
-                  content: "Modes, settings, weaning.",
-                },
-              ],
-            },
-            {
-              id: "neurology",
-              title: "Neurology",
-              children: [
-                {
-                  id: "stroke",
-                  title: "Stroke",
-                  content: "Ischemic, hemorrhagic.",
-                },
-                {
-                  id: "seizures",
-                  title: "Seizures",
-                  content: "Types, management.",
-                },
-                {
-                  id: "traumaticBrainInjury",
-                  title: "Traumatic Brain Injury",
-                  content: "Assessment, interventions.",
-                },
-                {
-                  id: "spinalCordInjury",
-                  title: "Spinal Cord Injury",
-                  content: "Levels, complications.",
-                },
-                {
-                  id: "neurodegenerativeDisorders",
-                  title: "Neurodegenerative Disorders",
-                  content: "Parkinson's, Alzheimer's.",
-                },
-              ],
-            },
-            {
-              id: "gastrointestinal",
-              title: "Gastrointestinal",
-              children: [
-                {
-                  id: "pepticUlcerDisease",
-                  title: "Peptic Ulcer Disease",
-                  content: "Causes, treatment.",
-                },
-                {
-                  id: "inflammatoryBowelDisease",
-                  title: "Inflammatory Bowel Disease",
-                  content: "Crohn's, ulcerative colitis.",
-                },
-                {
-                  id: "liverFailure",
-                  title: "Liver Failure",
-                  content: "Cirrhosis, hepatitis.",
-                },
-                {
-                  id: "pancreatitis",
-                  title: "Pancreatitis",
-                  content: "Acute and chronic.",
-                },
-                {
-                  id: "bowelObstruction",
-                  title: "Bowel Obstruction",
-                  content: "Types, management.",
-                },
-              ],
-            },
-            {
-              id: "endocrine",
-              title: "Endocrine",
-              children: [
-                {
-                  id: "diabetesMellitus",
-                  title: "Diabetes Mellitus",
-                  content: "Types, complications.",
-                },
-                {
-                  id: "thyroidDisorders",
-                  title: "Thyroid Disorders",
-                  content: "Hyperthyroidism, hypothyroidism.",
-                },
-                {
-                  id: "adrenalDisorders",
-                  title: "Adrenal Disorders",
-                  content: "Cushing's, Addison's.",
-                },
-                {
-                  id: "pituitaryDisorders",
-                  title: "Pituitary Disorders",
-                  content: "Growth hormone, ADH.",
-                },
-              ],
-            },
-            {
-              id: "renal",
-              title: "Renal",
-              children: [
-                {
-                  id: "acuteKidneyInjury",
-                  title: "Acute Kidney Injury",
-                  content: "Causes, stages.",
-                },
-                {
-                  id: "chronicKidneyDisease",
-                  title: "Chronic Kidney Disease",
-                  content: "Stages, management.",
-                },
-                {
-                  id: "dialysis",
-                  title: "Dialysis",
-                  content: "Hemodialysis, peritoneal dialysis.",
-                },
-                {
-                  id: "renalCalculi",
-                  title: "Renal Calculi",
-                  content: "Nephrolithiasis.",
-                },
-              ],
-            },
-            {
-              id: "hematology",
-              title: "Hematology",
-              children: [
-                { id: "anemia", title: "Anemia", content: "Types, causes." },
-                {
-                  id: "leukemia",
-                  title: "Leukemia",
-                  content: "Types, treatment.",
-                },
-                {
-                  id: "lymphoma",
-                  title: "Lymphoma",
-                  content: "Hodgkin's, non-Hodgkin's.",
-                },
-                {
-                  id: "coagulationDisorders",
-                  title: "Coagulation Disorders",
-                  content: "DIC, hemophilia.",
-                },
-              ],
-            },
-            {
-              id: "oncology",
-              title: "Oncology",
-              children: [
-                {
-                  id: "cancerPathophysiology",
-                  title: "Cancer Pathophysiology",
-                  content: "Cellular changes, metastasis.",
-                },
-                {
-                  id: "cancerTreatment",
-                  title: "Cancer Treatment",
-                  content: "Chemotherapy, radiation, surgery.",
-                },
-                {
-                  id: "painManagementOncology",
-                  title: "Pain Management",
-                  content: "Cancer-related pain.",
-                },
-                {
-                  id: "palliativeCare",
-                  title: "Palliative Care",
-                  content: "End-of-life care.",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          id: "maternalNewbornNursing",
-          title: "2. Maternal-Newborn Nursing",
-          children: [
-            {
-              id: "antepartumCare",
-              title: "Antepartum Care",
-              content: "Prenatal care, complications of pregnancy.",
-            },
-            {
-              id: "intrapartumCare",
-              title: "Intrapartum Care",
-              content: "Labor and delivery.",
-            },
-            {
-              id: "postpartumCare",
-              title: "Postpartum Care",
-              content: "Maternal recovery, complications.",
-            },
-            {
-              id: "newbornCare",
-              title: "Newborn Care",
-              content: "Assessment, common issues.",
-            },
-          ],
-        },
-        {
-          id: "pediatricNursing",
-          title: "3. Pediatric Nursing",
-          children: [
-            {
-              id: "growthDevelopmentPeds",
-              title: "Growth and Development",
-              content: "Stages, milestones.",
-            },
-            {
-              id: "commonChildhoodIllnesses",
-              title: "Common Childhood Illnesses",
-              content: "Respiratory, GI, etc.",
-            },
-            {
-              id: "pediatricAssessment",
-              title: "Pediatric Assessment",
-              content: "Age-specific techniques.",
-            },
-            {
-              id: "pediatricEmergencies",
-              title: "Pediatric Emergencies",
-              content: "Resuscitation, trauma.",
-            },
-          ],
-        },
-        {
-          id: "mentalHealthNursing",
-          title: "4. Mental Health Nursing",
-          children: [
-            {
-              id: "mentalHealthAssessment",
-              title: "Mental Health Assessment",
-              content: "Techniques, tools.",
-            },
-            {
-              id: "therapeuticCommunicationMH",
-              title: "Therapeutic Communication",
-              content: "Specific to mental health.",
-            },
-            {
-              id: "mentalHealthDisorders",
-              title: "Mental Health Disorders",
-              content: "Depression, anxiety, psychosis.",
-            },
-            {
-              id: "crisisIntervention",
-              title: "Crisis Intervention",
-              content: "Suicide prevention, etc.",
-            },
-            {
-              id: "psychopharmacology",
-              title: "Psychopharmacology",
-              content: "Common medications.",
-            },
-          ],
-        },
-        {
-          id: "communityPublicHealthNursing",
-          title: "5. Community/Public Health Nursing",
-          children: [
-            {
-              id: "communityHealthConcepts",
-              title: "Community Health Concepts",
-              content: "Population health, epidemiology.",
-            },
-            {
-              id: "healthPromotionPrevention",
-              title: "Health Promotion and Prevention",
-              content: "Strategies, interventions.",
-            },
-            {
-              id: "vulnerablePopulations",
-              title: "Vulnerable Populations",
-              content: "Homeless, elderly, etc.",
-            },
-            {
-              id: "disasterManagement",
-              title: "Disaster Management",
-              content: "Preparedness, response.",
-            },
-          ],
-        },
-        {
-          id: "leadershipManagement",
-          title: "6. Leadership & Management",
-          children: [
-            {
-              id: "nursingLeadership",
-              title: "Nursing Leadership",
-              content: "Roles, styles.",
-            },
-            {
-              id: "managementPrinciples",
-              title: "Management Principles",
-              content: "Planning, organizing, staffing.",
-            },
-            {
-              id: "delegationSupervision",
-              title: "Delegation and Supervision",
-              content: "Assigning tasks, overseeing staff.",
-            },
-            {
-              id: "conflictResolution",
-              title: "Conflict Resolution",
-              content: "Strategies, techniques.",
-            },
-          ],
-        },
-      ],
+        id: "phase3",
+        title: "Phase 3: Gaining Critical Care Experience & Certifications (2-5+ years)",
+        children: [
+          {
+            id: "secure-an-icu-position",
+            title: "1. Secure an Intensive Care Unit (ICU) Position",
+            children: [
+              {
+                id: "types-of-icus",
+                title: "Types of ICUs (Prioritized)",
+                children: [
+                  {
+                    id: "medical-icu-micu",
+                    title: "Medical ICU (MICU)",
+                    children: [
+                      {
+                        id: "sepsis",
+                        title: "Sepsis"
+                      },
+                      {
+                        id: "ards",
+                        title: "ARDS"
+                      },
+                      {
+                        id: "multi-organ-failure",
+                        title: "Multi-organ failure"
+                      },
+                      {
+                        id: "complex-respiratory-patients",
+                        title: "Complex respiratory patients"
+                      }
+                    ]
+                  },
+                  {
+                    id: "surgical-icu-sicu",
+                    title: "Surgical ICU (SICU)",
+                    children: [
+                      {
+                        id: "post-op-general-surgery",
+                        title: "Post-op general surgery"
+                      },
+                      {
+                        id: "trauma",
+                        title: "Trauma"
+                      },
+                      {
+                        id: "post-transplant",
+                        title: "Post-transplant"
+                      }
+                    ]
+                  },
+                  {
+                    id: "cardiothoracic-icu-cticu",
+                    title: "Cardiothoracic ICU (CTICU)",
+                    children: [
+                      {
+                        id: "open-heart-surgery-recovery-cabg-valve-replacement",
+                        title: "Open-heart surgery recovery (CABG, valve replacement)"
+                      },
+                      {
+                        id: "complex-arrhythmias",
+                        title: "Complex arrhythmias"
+                      },
+                      {
+                        id: "mechanical-circulatory-support-ecmo-vads",
+                        title: "Mechanical circulatory support (ECMO, VADs)"
+                      }
+                    ]
+                  },
+                  {
+                    id: "neuro-icu",
+                    title: "Neuro ICU",
+                    children: [
+                      {
+                        id: "strokes",
+                        title: "Strokes"
+                      },
+                      {
+                        id: "tbi",
+                        title: "TBI"
+                      },
+                      {
+                        id: "spinal-cord-injuries",
+                        title: "Spinal cord injuries"
+                      },
+                      {
+                        id: "complex-neurological-assessments",
+                        title: "Complex neurological assessments"
+                      }
+                    ]
+                  },
+                  {
+                    id: "trauma-icu",
+                    title: "Trauma ICU",
+                    children: [
+                      {
+                        id: "multi-system-trauma-patients",
+                        title: "Multi-system trauma patients"
+                      }
+                    ]
+                  },
+                  {
+                    id: "pediatric-icu-picu-neonatal-icu-nicu",
+                    title: "Pediatric ICU (PICU)/Neonatal ICU (NICU)",
+                    content: "Acceptable for some programs, but ensure adult ICU experience is also considered due to adult-focused curriculum."
+                  }
+                ]
+              },
+              {
+                id: "quality-of-experience",
+                title: "Quality of Experience (Must Master)",
+                children: [
+                  {
+                    id: "advanced-ventilator-management",
+                    title: "Advanced Ventilator Management",
+                    children: [
+                      {
+                        id: "modes-ac-simv-prvc-aprv-bipap-cpap",
+                        title: "All modes (AC, SIMV, PRVC, APRV, BiPAP, CPAP)"
+                      },
+                      {
+                        id: "titration-settings-fiO2-peep-tv-rr-i-e",
+                        title: "Titration settings (FiO₂, PEEP, TV, RR, I:E)"
+                      },
+                      {
+                        id: "troubleshooting-alarms",
+                        title: "Troubleshooting alarms"
+                      },
+                      {
+                        id: "abg-interpretation",
+                        title: "Arterial blood gas (ABG) interpretation"
+                      }
+                    ]
+                  },
+                  {
+                    id: "hemodynamic-monitoring",
+                    title: "Hemodynamic Monitoring",
+                    children: [
+                      {
+                        id: "invasive",
+                        title: "Invasive",
+                        children: [
+                          {
+                            id: "arterial-line-insertion-management",
+                            title: "Arterial line insertion/management"
+                          },
+                          {
+                            id: "cvp",
+                            title: "CVP"
+                          },
+                          {
+                            id: "pa-catheter-insertion-management-waveform-analysis-svo2",
+                            title: "PA catheter insertion/management (waveform analysis, SvO₂)"
+                          }
+                        ]
+                      },
+                      {
+                        id: "non-invasive",
+                        title: "Non-invasive",
+                        children: [
+                          {
+                            id: "nibp",
+                            title: "NIBP"
+                          },
+                          {
+                            id: "continuous-cardiac-output-monitors",
+                            title: "Continuous cardiac output monitors"
+                          }
+                        ]
+                      },
+                      {
+                        id: "interpretation-preload-afterload-contractility-cardiac-output-svr",
+                        title: "Interpretation: Understanding preload, afterload, contractility, cardiac output, SVR"
+                      }
+                    ]
+                  },
+                  {
+                    id: "vasoactive-inotropic-medications",
+                    title: "Vasoactive & Inotropic Medications",
+                    children: [
+                      {
+                        id: "norepinephrine",
+                        title: "Norepinephrine"
+                      },
+                      {
+                        id: "epinephrine",
+                        title: "Epinephrine"
+                      },
+                      {
+                        id: "dopamine",
+                        title: "Dopamine"
+                      },
+                      {
+                        id: "dobutamine",
+                        title: "Dobutamine"
+                      },
+                      {
+                        id: "vasopressin",
+                        title: "Vasopressin"
+                      },
+                      {
+                        id: "phenylephrine",
+                        title: "Phenylephrine"
+                      },
+                      {
+                        id: "milrinone",
+                        title: "Milrinone"
+                      },
+                      {
+                        id: "nicardipine",
+                        title: "Nicardipine"
+                      },
+                      {
+                        id: "nitroglycerin",
+                        title: "Nitroglycerin"
+                      },
+                      {
+                        id: "nitroprusside",
+                        title: "Nitroprusside"
+                      }
+                    ]
+                  },
+                  {
+                    id: "sedation-management",
+                    title: "Sedation Management",
+                    children: [
+                      {
+                        id: "propofol",
+                        title: "Propofol"
+                      },
+                      {
+                        id: "midazolam",
+                        title: "Midazolam"
+                      },
+                      {
+                        id: "fentanyl",
+                        title: "Fentanyl"
+                      },
+                      {
+                        id: "precedex",
+                        title: "Precedex"
+                      },
+                      {
+                        id: "rass-sas-assessment",
+                        title: "Assessment using RASS and SAS scales"
+                      }
+                    ]
+                  },
+                  {
+                    id: "neuromuscular-blockade",
+                    title: "Neuromuscular Blockade",
+                    children: [
+                      {
+                        id: "paralytics",
+                        title: "Paralytics"
+                      },
+                      {
+                        id: "reversal-agents",
+                        title: "Reversal agents"
+                      }
+                    ]
+                  },
+                  {
+                    id: "cardiac-rhythm-interpretation-management",
+                    title: "Cardiac Rhythm Interpretation & Management",
+                    children: [
+                      {
+                        id: "advanced-ecg-interpretation",
+                        title: "Advanced ECG interpretation"
+                      },
+                      {
+                        id: "bradyarrhythmias",
+                        title: "Bradyarrhythmias"
+                      },
+                      {
+                        id: "tachyarrhythmias-svt-afib-flutter-vt-vfib",
+                        title: "Tachyarrhythmias (SVT, AFib/flutter, VT, VFib)"
+                      },
+                      {
+                        id: "pacing-defibrillation-cardioversion",
+                        title: "Pacing, defibrillation, cardioversion"
+                      }
+                    ]
+                  },
+                  {
+                    id: "fluid-electrolyte-management",
+                    title: "Advanced Fluid & Electrolyte Management",
+                    children: [
+                      {
+                        id: "aggressive-fluid-resuscitation",
+                        title: "Aggressive fluid resuscitation"
+                      },
+                      {
+                        id: "hyponatremia",
+                        title: "Hyponatremia"
+                      },
+                      {
+                        id: "hyperkalemia",
+                        title: "Hyperkalemia"
+                      }
+                    ]
+                  },
+                  {
+                    id: "crrt-dialysis",
+                    title: "CRRT/Dialysis",
+                    children: [
+                      {
+                        id: "continuous-renal-replacement-therapy",
+                        title: "Continuous renal replacement therapy"
+                      },
+                      {
+                        id: "intermittent-hemodialysis",
+                        title: "Intermittent hemodialysis"
+                      }
+                    ]
+                  },
+                  {
+                    id: "pharmacology-application",
+                    title: "Pharmacology Application",
+                    content: "Understanding how critically ill patients metabolize/respond to drugs differently."
+                  },
+                  {
+                    id: "airway-management",
+                    title: "Airway Management",
+                    children: [
+                      {
+                        id: "assisting-with-intubation",
+                        title: "Assisting with intubation"
+                      },
+                      {
+                        id: "troubleshooting-etts",
+                        title: "Troubleshooting ETTs"
+                      },
+                      {
+                        id: "suctioning",
+                        title: "Suctioning"
+                      }
+                    ]
+                  },
+                  {
+                    id: "rapid-response-code-team-participation",
+                    title: "Rapid Response/Code Team Participation",
+                    content: "Leading or actively participating in emergent situations."
+                  },
+                  {
+                    id: "complex-patient-assessment",
+                    title: "Complex Patient Assessment",
+                    content: "Integrating all assessment findings for a comprehensive patient picture."
+                  },
+                  {
+                    id: "prioritization-time-management",
+                    title: "Prioritization & Time Management",
+                    content: "Managing multiple critical drips, assessments, and interventions simultaneously."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: "obtain-essential-certifications",
+            title: "2. Obtain Essential Certifications",
+            children: [
+              {
+                id: "bls-basic-life-support",
+                title: "BLS: Basic Life Support"
+              },
+              {
+                id: "acls-advanced-cardiovascular-life-support",
+                title: "ACLS: Advanced Cardiovascular Life Support",
+                content: "In-depth algorithms, pharmacology for codes."
+              },
+              {
+                id: "pals-pediatric-advanced-life-support",
+                title: "PALS: Pediatric Advanced Life Support",
+                content: "If considering pediatric critical care or if required by CRNA programs."
+              },
+              {
+                id: "ccrn-critical-care-registered-nurse",
+                title: "CCRN (Critical Care Registered Nurse): ABSOLUTELY ESSENTIAL",
+                children: [
+                  {
+                    id: "study-domains",
+                    title: "Study Domains",
+                    children: [
+                      {
+                        id: "cardiovascular",
+                        title: "Cardiovascular"
+                      },
+                      {
+                        id: "pulmonary",
+                        title: "Pulmonary"
+                      },
+                      {
+                        id: "endocrine",
+                        title: "Endocrine"
+                      },
+                      {
+                        id: "gastrointestinal",
+                        title: "Gastrointestinal"
+                      },
+                      {
+                        id: "renal",
+                        title: "Renal"
+                      },
+                      {
+                        id: "hematology-immunology",
+                        title: "Hematology/Immunology"
+                      },
+                      {
+                        id: "multisystem",
+                        title: "Multisystem"
+                      },
+                      {
+                        id: "neurology",
+                        title: "Neurology"
+                      },
+                      {
+                        id: "psychosocial",
+                        title: "Psychosocial"
+                      },
+                      {
+                        id: "professional-caring-ethical-practice",
+                        title: "Professional Caring & Ethical Practice"
+                      }
+                    ]
+                  },
+                  {
+                    id: "preparation-materials",
+                    title: "Preparation",
+                    children: [
+                      {
+                        id: "aacn-review-courses-materials",
+                        title: "AACN review courses/materials"
+                      },
+                      {
+                        id: "barrons-ccrn",
+                        title: "Barrons CCRN"
+                      },
+                      {
+                        id: "laura-gasparis-vonfrolio-review",
+                        title: "Laura Gasparis Vonfrolio review"
+                      }
+                    ],
+                    content: "Demonstrates mastery of critical care knowledge."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            id: "shadowing-experience",
+            title: "3. Shadowing Experience",
+            children: [
+              {
+                id: "target-crna-and-anesthesiologists",
+                title: "Target: CRNAs and Anesthesiologists in various surgical settings"
+              },
+              {
+                id: "observation-focus",
+                title: "Observation Focus",
+                children: [
+                  {
+                    id: "pre-op-assessment-planning",
+                    title: "Pre-op assessment and planning"
+                  },
+                  {
+                    id: "induction-maintenance-emergence-from-anesthesia",
+                    title: "Induction, maintenance, emergence from anesthesia"
+                  },
+                  {
+                    id: "airway-management-techniques",
+                    title: "Airway management techniques"
+                  },
+                  {
+                    id: "pharmacology-in-action-drug-administration-titrations",
+                    title: "Pharmacology in action (drug administration, titrations)"
+                  },
+                  {
+                    id: "monitoring-techniques-ecg-capnography-bis-nmt",
+                    title: "Monitoring techniques (ECG, pulse oximetry, capnography, BIS, NMT)"
+                  },
+                  {
+                    id: "crisis-management-during-anesthesia",
+                    title: "Crisis management during anesthesia"
+                  },
+                  {
+                    id: "regional-anesthesia-techniques-spinals-epidurals-nerve-blocks",
+                    title: "Regional anesthesia techniques (spinals, epidurals, nerve blocks)"
+                  },
+                  {
+                    id: "interactions-with-surgeons-circulating-nurses",
+                    title: "Interactions with surgeons, circulating nurses, and other team members"
+                  }
+                ]
+              },
+              {
+                id: "documentation-logs",
+                title: "Documentation: Keep meticulous logs",
+                content: "Dates, CRNA/Anesthesiologist name/contact, facility, type of cases, hours. Aim for 20–40+ hours, demonstrating genuine interest."
+              }
+            ]
+          },
+          {
+            id: "gre-graduate-record-examination",
+            title: "4. Graduate Record Examination (GRE) (If Required by Target Programs)",
+            children: [
+              {
+                id: "verbal-reasoning",
+                title: "Verbal Reasoning",
+                children: [
+                  {
+                    id: "vocabulary",
+                    title: "Vocabulary"
+                  },
+                  {
+                    id: "reading-comprehension",
+                    title: "Reading comprehension"
+                  },
+                  {
+                    id: "critical-reasoning",
+                    title: "Critical reasoning"
+                  }
+                ]
+              },
+              {
+                id: "quantitative-reasoning",
+                title: "Quantitative Reasoning",
+                children: [
+                  {
+                    id: "arithmetic",
+                    title: "Arithmetic"
+                  },
+                  {
+                    id: "algebra",
+                    title: "Algebra"
+                  },
+                  {
+                    id: "geometry",
+                    title: "Geometry"
+                  },
+                  {
+                    id: "data-analysis",
+                    title: "Data analysis"
+                  }
+                ]
+              },
+              {
+                id: "analytical-writing",
+                title: "Analytical Writing",
+                children: [
+                  {
+                    id: "analyze-an-issue",
+                    title: "Analyze an issue"
+                  },
+                  {
+                    id: "analyze-an-argument",
+                    title: "Analyze an argument"
+                  }
+                ]
+              },
+              {
+                id: "preparation-resources",
+                title: "Preparation",
+                children: [
+                  {
+                    id: "ets-official-guides",
+                    title: "ETS official guides"
+                  },
+                  {
+                    id: "kaplan",
+                    title: "Kaplan"
+                  },
+                  {
+                    id: "princeton-review",
+                    title: "Princeton Review"
+                  },
+                  {
+                    id: "magoosh",
+                    title: "Magoosh"
+                  },
+                  {
+                    id: "practice-tests",
+                    title: "Extensive practice tests"
+                  }
+                ],
+                content: "Aim for 300+ combined score."
+              }
+            ]
+          },
+          {
+            id: "professional-development",
+            title: "5. Professional Development",
+            children: [
+              {
+                id: "professional-organizations",
+                title: "Professional Organizations",
+                children: [
+                  {
+                    id: "aacn-american-association-of-critical-care-nurses",
+                    title: "AACN (Active participation!)"
+                  },
+                  {
+                    id: "aana-american-association-of-nurse-anesthesiology",
+                    title: "AANA"
+                  }
+                ]
+              },
+              {
+                id: "leadership-committees",
+                title: "Leadership/Committees",
+                children: [
+                  {
+                    id: "unit-councils",
+                    title: "Unit councils"
+                  },
+                  {
+                    id: "quality-improvement-initiatives",
+                    title: "Quality improvement initiatives"
+                  },
+                  {
+                    id: "precepting-new-nurses",
+                    title: "Precepting new nurses"
+                  }
+                ]
+              },
+              {
+                id: "continuing-education",
+                title: "Continuing Education",
+                children: [
+                  {
+                    id: "workshops-seminars",
+                    title: "Attend workshops, seminars"
+                  },
+                  {
+                    id: "online-courses-critical-care-anesthesia",
+                    title: "Online courses related to critical care or anesthesia"
+                  }
+                ]
+              },
+              {
+                id: "nursing-research",
+                title: "Nursing Research",
+                content: "Participate in or be exposed to research within your unit."
+              }
+            ]
+          }
+        ]
     },
     {
       id: "phase4",
@@ -2338,5 +2617,6 @@ const topicsData = [
       ],
     },
 ];
+
   
 export default topicsData;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import TopicList from "./components/TopicList";
 import { Button } from "@/components/ui/button";
-import topicsData from "./data/topicsData";
 import { Textarea } from "@/components/ui/textarea";
 import {
   Accordion,
@@ -9,6 +8,8 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
+
+import topicsData from "./data/topicsData";
 
 // Helper function to find a topic by ID in the nested structure
 const findTopicById = (topics, id) => {
@@ -26,83 +27,75 @@ const findTopicById = (topics, id) => {
   return null;
 };
 
-// Helper function to find the parent ID of a topic
-const findParentId = (topics, targetId, parentId = null) => {
-  for (const topic of topics) {
-    if (topic.id === targetId) {
-      return parentId;
-    }
-    if (topic.children) {
-      const foundParentId = findParentId(topic.children, targetId, topic.id);
-      if (foundParentId) {
-        return foundParentId;
-      }
-    }
-  }
-  return null;
-};
 export default function App() {
+  // Load completed topics from localStorage
   const [completedTopics, setCompletedTopics] = useState(() => {
     try {
-      const storedCompleted = localStorage.getItem("completedTopics");
-      return storedCompleted ? JSON.parse(storedCompleted) : [];
-    } catch (error) {
-      console.error("Failed to parse completedTopics:", error);
+      const stored = localStorage.getItem("completedTopics");
+      return stored ? JSON.parse(stored) : [];
+    } catch (e) {
+      console.error("Failed to load completedTopics", e);
       return [];
     }
   });
 
+  // Active topic state
   const [activeTopicId, setActiveTopicId] = useState(null);
   const [activeTopicContent, setActiveTopicContent] = useState(
     "Select a topic to view its content."
   );
+
+  // Notes per topic
   const [topicNotes, setTopicNotes] = useState(() => {
     try {
-      const storedNotes = localStorage.getItem("topicNotes");
-      return storedNotes ? JSON.parse(storedNotes) : {};
-    } catch (error) {
-      console.error("Failed to parse topicNotes:", error);
+      const stored = localStorage.getItem("topicNotes");
+      return stored ? JSON.parse(stored) : {};
+    } catch (e) {
+      console.error("Failed to load topicNotes", e);
       return {};
     }
   });
 
-  const notesChanged = useRef(false); // Track if notes have changed
+  const notesChanged = useRef(false);
 
+  // Save completed topics
   useEffect(() => {
     try {
       localStorage.setItem("completedTopics", JSON.stringify(completedTopics));
-    } catch (error) {
-      console.error("Failed to save completedTopics to localStorage:", error);
+    } catch (e) {
+      console.error("Failed to save completedTopics", e);
     }
   }, [completedTopics]);
 
+  // Save notes only when changed
   useEffect(() => {
     if (notesChanged.current) {
       try {
         localStorage.setItem("topicNotes", JSON.stringify(topicNotes));
-      } catch (error) {
-        console.error("Failed to save topicNotes to localStorage:", error);
+        notesChanged.current = false;
+      } catch (e) {
+        console.error("Failed to save topicNotes", e);
       }
     }
-    notesChanged.current = false; // Reset the flag
   }, [topicNotes]);
 
+  // Update active topic content when selected
   useEffect(() => {
     if (activeTopicId) {
       const topic = findTopicById(topicsData, activeTopicId);
-      setActiveTopicContent(
-        topic?.content || "No content available for this topic."
-      );
-      setTopicNotes((prevNotes) => prevNotes[activeTopicId] || "");
+      setActiveTopicContent(topic?.content || "No content available.");
     } else {
       setActiveTopicContent("Select a topic to view its content.");
-      // setTopicNotes({});  // Consider if you want to clear notes when no topic is selected
     }
   }, [activeTopicId]);
 
-  const handleCompleteTopic = (topicId) => {
-    if (!completedTopics.includes(topicId)) {
-      setCompletedTopics((prev) => [...prev, topicId]);
+  const handleCompleteTopic = (topicId, isChecked) => {
+    if (isChecked) {
+      setCompletedTopics((prev) =>
+        prev.includes(topicId) ? prev : [...prev, topicId]
+      );
+    } else {
+      setCompletedTopics((prev) => prev.filter((id) => id !== topicId));
     }
   };
 
@@ -110,43 +103,34 @@ export default function App() {
     setActiveTopicId(topicId);
   };
 
-  const handleNotesChange = (event) => {
-    const newNotes = event.target.value;
-    setTopicNotes((prevNotes) => ({
-      ...prevNotes,
-      [activeTopicId]: newNotes,
+  const handleNotesChange = (e) => {
+    const value = e.target.value;
+    setTopicNotes((prev) => ({
+      ...prev,
+      [activeTopicId]: value,
     }));
-    notesChanged.current = true; // Set the flag
+    notesChanged.current = true;
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-sans text-gray-900 p-4 flex flex-col lg:flex-row gap-4">
-      {/* Topic List Section */}
+      {/* Left Sidebar - Topics */}
       <div className="w-full lg:w-1/2 p-4 bg-white rounded-lg shadow-lg overflow-y-auto h-[calc(100vh-4rem)]">
         <h2 className="text-2xl font-bold mb-4 text-gray-800">Topics</h2>
         <Accordion type="single" collapsible className="w-full">
           {topicsData.map((phase) => (
-            <AccordionItem
-              key={phase.id}
-              value={phase.id}
-              className="border-b last:border-b-0"
-            >
-              <AccordionTrigger className="text-xl font-semibold text-gray-700 py-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+            <AccordionItem key={phase.id} value={phase.id}>
+              <AccordionTrigger className="text-xl font-semibold text-gray-700 py-4 hover:underline">
                 {phase.title}
               </AccordionTrigger>
-              <AccordionContent className="pb-4">
+              <AccordionContent>
                 <TopicList
-                  topics={phase.children.map((child) => ({
-                    ...child,
-                    depth: 0,
-                  }))}
+                  topics={phase.children}
                   completedTopics={completedTopics}
                   onCompleteTopic={handleCompleteTopic}
                   activeTopicId={activeTopicId}
                   onSelectTopic={handleSelectTopic}
                   depth={1}
-                  findParentId={findParentId}
-                  topicsData={topicsData}
                 />
               </AccordionContent>
             </AccordionItem>
@@ -154,7 +138,7 @@ export default function App() {
         </Accordion>
       </div>
 
-      {/* Topic Detail Section */}
+      {/* Right Panel - Content & Notes */}
       <div className="w-full lg:w-1/2 p-6 bg-white rounded-lg shadow-lg flex flex-col h-[calc(100vh-4rem)] border border-gray-200">
         <h2 className="text-2xl font-bold mb-4 text-gray-800 border-b pb-2">
           {activeTopicId
@@ -164,6 +148,7 @@ export default function App() {
         <div className="flex-grow overflow-y-auto text-gray-700 leading-relaxed">
           {activeTopicContent}
         </div>
+
         <div className="mt-6 border-t pt-4 border-gray-200 flex flex-col gap-4">
           <div>
             <h3 className="text-xl font-semibold mb-3 text-gray-800">Notes</h3>
@@ -178,6 +163,7 @@ export default function App() {
               <p className="text-gray-500">Select a topic to add notes.</p>
             )}
           </div>
+
           <div>
             <h3 className="text-xl font-semibold mb-3 text-gray-800">
               Future Features:
